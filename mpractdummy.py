@@ -1,3 +1,5 @@
+#this is what I worked on making changes to the orginal I had with my partner to allow
+#what we have to fall within index range
 my_file = open('green-eggs.txt')
 
 def make_chains(input_file):
@@ -12,7 +14,7 @@ def make_chains(input_file):
             bigram_dict[(string_text[i-2], string_text[i-1])] = [string_text[i]]
         else:    
             bigram_dict[(string_text[i-1], string_text[i])] = [string_text[i+1]]
-        print bigram_dict     
+    print bigram_dict     
     
 make_chains(my_file)
         

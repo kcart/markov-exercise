@@ -1,29 +1,36 @@
-import sys
+from sys import argv
 
+script, corpus = argv 
 
 def make_chains(corpus):
-    """Takes input text as string; returns dictionary of markov chains."""
+    open_file = open(corpus)
+    we_read_text = open_file.read()
+    string_text = we_read_text.split()
+    bigram_dict = {}
 
-    return {}
-    print "test"
+    for i in range(len(string_text)-2):    
+        bigram_dict[(string_text[i], string_text[i+1])] = [string_text[i+2]]
+
+    return bigram_dict     
+
 
 def make_text(chains):
     """Takes dictionary of markov chains; returns random text."""
 
     return "Here's some random text."
 
-make_chains(corpus)
 
 # Change this to read input_text from a file, deciding which file should
 # be used by examining the `sys.argv` arguments (if neccessary, see the
 # Python docs for sys.argv)
 
-# input_text = "Some text"
+input_text = "Some text"
 
-# # Get a Markov chain
-# chain_dict = make_chains(input_text)
+# Get a Markov chain
+chain_dict = make_chains(corpus)
+print chain_dict
 
-# # Produce random text
-# random_text = make_text(chain_dict)
+# Produce random text
+# random_text = make_text(chain_dict())
 
 # print random_text
