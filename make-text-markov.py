@@ -1,4 +1,5 @@
 from sys import argv
+from random import choice
 
 script, corpus = argv 
 print script
@@ -26,7 +27,16 @@ def make_chains(corpus):
 new_dictionary = make_chains(corpus) 
 
 def make_text(chains):
-    print chains
+    rand_tuple = choice(chains.keys()) #picks a random key from dictionary, give it name rand_tuple
+    rand_word = choice(rand_tuple) #picks random word from tuple
+    assoc_value = choice(chains[rand_tuple]) #value associated with key rand_tuple
+    print chains.get((rand_word, assoc_value), "doesn't exist")
+   
+
+
+
+
+    
     """Takes dictionary of markov chains; returns random text."""
   
  # return "Here's some random text."

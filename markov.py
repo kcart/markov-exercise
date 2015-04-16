@@ -1,4 +1,5 @@
 from sys import argv
+from random import choice 
 
 script, corpus = argv 
 
@@ -13,8 +14,9 @@ def make_chains(corpus):
 
     return bigram_dict     
 
-
 def make_text(chains):
+    
+
     """Takes dictionary of markov chains; returns random text."""
 
     return "Here's some random text."
